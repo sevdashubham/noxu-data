@@ -1,3 +1,4 @@
+import React from "react";
 import {NoxuHeader} from "@/components/header/noxu-header";
 import {NoxuFooter} from "@/components/footer/noxu-footer";
 

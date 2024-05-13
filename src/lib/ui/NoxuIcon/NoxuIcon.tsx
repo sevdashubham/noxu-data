@@ -5,9 +5,13 @@ import Image from "next/image";
 import getIconByKey from "@/utils/getIconByKey";
 import {IconProps} from "@/types/ui-lib";
 
-const NoxuIcon: FC<IconProps> = ({ icon, width, height,extraStyles, onClick, ...props }) => {
+const NoxuIcon: FC<IconProps> = ({ icon, width, height, onClick, ...props }) => {
     return (
-        <Image src={getIconByKey(icon)} alt={`icon-${icon}`} width={width} height={height} style={extraStyles} onClick={onClick ? onClick: undefined} {...props} />
+        <Image loading={"lazy"} src={getIconByKey(icon)} alt={`icon-${icon}`}
+               height={0}
+               width={0}
+               style={{width: `${width}rem`, height: `${height}rem` }}
+               onClick={onClick ? onClick: undefined} {...props} />
     )
 }
 

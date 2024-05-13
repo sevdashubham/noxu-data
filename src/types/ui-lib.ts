@@ -1,5 +1,5 @@
 import {MouseEventHandler} from "react";
-import {ButtonVariant} from "@/utils/enum";
+import {ButtonVariant, IconPosition} from "@/utils/enum";
 
 export interface ButtonProps {
     label?: string;
@@ -30,4 +30,10 @@ export interface SelectProps {
 
 export type iconOptions = {
     [key: string]: string
+}
+
+export interface GroupButtonProps {
+    icon: string,
+    text: string,
+    iconPosition: IconPosition.Right | IconPosition.Left
 }

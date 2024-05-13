@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {HEADER_TEXT} from "@/utils/strings";
 
 export const NoxuHeader = () => {
     return (
@@ -9,7 +10,7 @@ export const NoxuHeader = () => {
                    src={'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'}
                    alt="header avatar image"/>
             <div className="flex items-center">
-                <p className="text-base leading-6 font-normal text-left text-slate-900">{'List my top 10 accounts'}</p>
+                <p className="text-base font-normal text-left text-slate-900">{HEADER_TEXT}</p>
             </div>
         </div>
     )

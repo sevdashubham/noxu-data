@@ -15,12 +15,12 @@ export default function CoreLayout({
             </header>
 
             {/* Content */}
-            <main className="flex-1 bg-slate-100">
+            <main className="flex-1 bg-slate-100 pb-[150px]">
                 {children}
             </main>
 
             {/* Footer */}
-            <footer className="relative bottom-0 bg-white w-full z-10">
+            <footer className="fixed bottom-0 bg-white w-full z-10">
                 <NoxuFooter />
             </footer>
         </div>

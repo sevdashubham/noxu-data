@@ -46,3 +46,5 @@ const NoxuButton = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 export default NoxuButton;
+
+NoxuButton.displayName = 'NoxuButton';

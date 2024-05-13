@@ -11,4 +11,5 @@ const icons: iconOptions = {
     'close': require('../../public/assets/icons/list/close.svg'),
 };
 
-export default (iconName: string) => icons[iconName];
+const IconMap = (iconName: string) => icons[iconName];
+export default IconMap;

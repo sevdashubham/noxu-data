@@ -6,11 +6,11 @@ import {TABLE_HEADER_LIST} from "@/utils/constants";
 export const TableContent: React.FC<TableContentProps> = ({data}) => {
     const renderTableContent = () => {
         if (data?.length > 0) {
-            return data.map((table: ITable) => (<tr key={table.uuid} className="grid grid-cols-10">
+            return data.map((table: ITable) => (<tr key={table.uuid}>
                 {TABLE_HEADER_LIST.map((header: ITableHeader) => {
                     const mappedTable = table as ITableKey;
                     const propName: string = header.key;
-                    return <td key={header.key} className={`col-span-${header.column} px-4 py-2 bg-white border-b border-slate-300 whitespace-nowrap text-base font-regular text-slate-900 truncate`}>
+                    return <td key={header.key} className={`px-4 py-2 bg-white border-b border-slate-300 whitespace-nowrap text-base font-regular text-slate-900 truncate`}>
                         {mappedTable[propName]}
                     </td>
                 })}

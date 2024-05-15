@@ -1,5 +1,7 @@
 import {IconPosition} from "@/utils/enum";
 
+export const SOCKET_EVENT = 'noxu-chat';
+
 export const SUGGESTION_BUTTONS = ['Suggest question 1', 'Suggest question 2', 'Suggest question 3'];
 
 export const GROUP_BUTTONS = [{

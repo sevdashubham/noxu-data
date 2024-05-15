@@ -1,17 +1,29 @@
 "use client"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import NoxuIcon from "@/lib/ui/NoxuIcon/NoxuIcon";
 import NoxuButton from "@/lib/ui/NoxuButton/NoxuButton";
 import {ButtonGroup} from "@/components/buttonGroup/button-group";
 import {TableHeader} from "@/components/tableHeader/table-header";
 import {QUERY_TEXT, TABLE_INFO_TEXT} from "@/utils/strings";
-import {DEFAULT_TABLE_DATA, TABLE_ACTIONS} from "@/utils/constants";
+import {DEFAULT_TABLE_DATA, SOCKET_EVENT, TABLE_ACTIONS} from "@/utils/constants";
 import {ITable} from "@/types/table";
 import {TableContent} from "@/components/tableContent/table-content";
+import {socket} from "@/lib/socket-client/socket-client";
 
 const QueryResults = () => {
     const [tableData, setTableData] = useState<ITable[]>(DEFAULT_TABLE_DATA);
     const [isInfoVisible, setIsInfoVisible] = useState<boolean>(true);
+    const [chatList, setChatList] = useState<Array<string>>([]);
+
+    useEffect(() => {
+        socket.on(SOCKET_EVENT, (value) => {
+            setChatList((prevMessages) => [...prevMessages, value]);
+        });
+
+        return () => {
+           socket.off(SOCKET_EVENT);
+        };
+    }, [])
 
     const renderTableInfo = () => {
         if (isInfoVisible) {
@@ -33,6 +45,7 @@ const QueryResults = () => {
             <NoxuButton label={action} key={action}/>
         ))
     }
+
     return (
         <div className="py-8 lg:px-36 sm:px-8 px-2">
             <ButtonGroup/>
@@ -54,6 +67,9 @@ const QueryResults = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="flex flex-col">
+                    {chatList.map((chat: string) => <h3>{chat}</h3>)}
                 </div>
             </div>
         </div>

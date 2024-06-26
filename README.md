@@ -25,4 +25,4 @@ Assignment app with the following features:
 - [x] using [`Figma link`](https://www.figma.com/file/KCPP1Ipte1N7trYLNJQsdC/FE-Interview?type=design&node-id=2-3450&mode=design&t=nJqyIEQsWFfhrGM1-0)
 - [x] Readme guide
 - [x] Pixel perfect UI design
-- [x] Hosted on [`Vercel`](https://noxu-data-eight.vercel.app/)
+- [x] Hosted on [`Vercel`](https://noxu-data-ten.vercel.app/)
